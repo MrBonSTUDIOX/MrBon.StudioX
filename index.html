@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MrBon StudioX</title>
+<meta name="description" content="MrBon StudioX — home of Survive from MrBon. Download the game and join the community.">
+<link rel="icon" type="image/png" href="studio.png">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MrBon StudioX — Creating Beyond Imagination">
+<meta property="og:description" content="Independent game studio. Home of Survive from MrBon.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#111;font-family:'Inter',sans-serif}
+
+section{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center;gap:32px}
+
+/* 1. Hero */
+.hero{position:relative;background:#fff}
+.logo-big{width:min(64vw,400px);height:auto;display:block;animation:pop 1s ease both}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.typed{margin:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(44px,10vw,112px);line-height:1.05;letter-spacing:2px;text-transform:uppercase;min-height:1.1em}
+.typed .red{color:#e11d2e}
+.caret{display:inline-block;width:.06em;height:.9em;margin-left:.06em;background:#111;vertical-align:-.08em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{margin:0;font-size:18px;color:#555}
+.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#777;font-size:14px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,6px)}}
+
+/* 2. Game */
+.game .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:48px}
+.bear{height:min(46vh,420px);width:auto;display:block;image-rendering:pixelated;filter:drop-shadow(0 18px 18px rgba(0,0,0,.18))}
+.game-info{display:flex;flex-direction:column;gap:20px;align-items:flex-start;text-align:left}
+.eyebrow{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#555;font-weight:600}
+.game h2{margin:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(36px,6vw,64px);text-transform:uppercase;line-height:1}
+.game p{margin:0;max-width:360px;font-size:18px;line-height:1.55;color:#555}
+
+.btn{min-height:60px;padding:0 36px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border-radius:999px;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:#fff;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-red{background:#e11d2e;box-shadow:0 10px 24px rgba(225,29,46,.35)}
+.btn-red:hover{background:#c8101f;box-shadow:0 14px 28px rgba(225,29,46,.45)}
+.btn-discord{background:#5865f2;box-shadow:0 10px 24px rgba(88,101,242,.35)}
+.btn-discord:hover{background:#4752c4}
+.btn-tiktok{background:#111;box-shadow:0 10px 24px rgba(0,0,0,.28)}
+.btn-tiktok:hover{background:#2a2a2a}
+
+/* 3. Community */
+.community h2{margin:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(36px,6vw,64px);text-transform:uppercase}
+.community p{margin:0;max-width:420px;font-size:18px;line-height:1.55;color:#555}
+.buttons{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+
+.credit{display:flex;align-items:center;justify-content:center;gap:22px;padding:40px 24px 48px;font-size:17px;color:#777;letter-spacing:1px}
+.social{display:block;line-height:0;transition:transform .15s}
+.social:hover{transform:scale(1.12)}
+.social img{height:40px;width:auto;display:block}
+
+/* appear on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .logo-big{animation:none}
+}
+@media (max-width:640px){
+  .game-info{align-items:center;text-align:center}
+  .row{gap:28px}
+}
+
+/* About */
+.about,.iron{min-height:auto;padding:96px 24px;text-align:left}
+.wrap{width:100%;max-width:720px;display:flex;flex-direction:column;gap:18px}
+.about h2,.iron h2{margin:0;font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(36px,6vw,60px);text-transform:uppercase;line-height:1.05}
+.about h3{margin:18px 0 0;font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;text-transform:uppercase;letter-spacing:1px}
+.tag{margin:0;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:#555;font-weight:600}
+.about p,.iron p{margin:0;font-size:18px;line-height:1.7;color:#444}
+.chips{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.chips li{padding:16px 20px;border:1px solid #e3e3e3;border-radius:14px;font-weight:600;font-size:16px;color:#111;background:#fafafa}
+.closing{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px !important;letter-spacing:1px;color:#111 !important;margin-top:8px !important}
+/* IronTurboMax */
+.iron{border-top:1px solid #eee}
+.iron .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:56px;max-width:960px}
+.iron-img{height:min(42vh,340px);width:auto;display:block}
+.iron-info{flex:1 1 340px;max-width:520px;display:flex;flex-direction:column;gap:16px}
+.iron-info a{color:#5865f2;font-weight:600}
+@media (max-width:640px){.iron .row{gap:28px}.iron-img{height:220px}}
+
+/* ===== Upgrade ===== */
+html{scroll-padding-top:70px}
+a:focus-visible{outline:3px solid #111;outline-offset:3px;border-radius:6px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:#111;z-index:60}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #eee;transform:translateY(-100%);transition:transform .35s ease}
+.nav.show{transform:none}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;font-family:'Oswald',sans-serif;font-weight:700;font-size:18px;letter-spacing:1px;text-transform:uppercase}
+.nav-brand img{width:34px;height:34px;display:block}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:#555;text-decoration:none;font-weight:500;font-size:15px;transition:color .15s}
+.nav-links a:hover{color:#111}
+.btn-sm{min-height:42px;padding:0 24px;font-size:16px}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#dcdcdc 1.2px,transparent 1.2px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at center,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at center,#000 10%,transparent 70%);pointer-events:none}
+.hero>*{position:relative}
+.bear{animation:float 3.4s ease-in-out infinite}
+.iron-img{animation:float 4.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.game .btn-red{animation:pulse 2.4s ease-out infinite}
+.game .btn-red:hover{animation:none}
+@keyframes pulse{0%{box-shadow:0 10px 24px rgba(225,29,46,.35),0 0 0 0 rgba(225,29,46,.4)}70%,100%{box-shadow:0 10px 24px rgba(225,29,46,.35),0 0 0 18px rgba(225,29,46,0)}}
+.chips li{transition:transform .2s,box-shadow .2s,border-color .2s}
+.chips li:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-color:#111}
+@media (max-width:640px){.nav-links{display:none}.nav{padding:10px 16px}}
+@media (prefers-reduced-motion:reduce){.bear,.iron-img,.game .btn-red{animation:none}.nav{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav">
+  <a class="nav-brand" href="#top"><img src="studio.png" alt=""><span>MrBon StudioX</span></a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#game">Game</a>
+    <a href="#ironturbomax">IronTurboMax</a>
+  </nav>
+  <a class="btn btn-red btn-sm dl" href="#">Download</a>
+</header>
+
+<section class="hero" id="top">
+  <img class="logo-big" src="studio.png" alt="MrBon StudioX">
+  <h1 class="typed" aria-label="MrBon StudioX"><span id="typed"></span><span class="caret"></span></h1>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap reveal">
+    <h2>MrBon Studio X</h2>
+    <p class="tag">Innovation. Creativity. Gaming.</p>
+    <p>MrBon StudioX is an independent game development studio focused on creating original gaming experiences, unique worlds, and memorable characters.</p>
+    <p>Our mission is to bring creative ideas to life through game development, interactive experiences, and original projects. We aim to combine creativity, technology, and innovation to build experiences that players can enjoy and remember.</p>
+    <p>From original characters and ambitious concepts to interactive games and experimental projects, every creation represents our vision and dedication.</p>
+    <h3>Our Projects</h3>
+    <ul class="chips">
+      <li>Game Development</li>
+      <li>Original Characters &amp; Universes</li>
+      <li>Interactive Experiences</li>
+      <li>Creative Experiments</li>
+    </ul>
+    <h3>Our Vision</h3>
+    <p>We believe every great project begins with an idea. At MrBon StudioX, we turn ideas into experiences.</p>
+    <p class="closing">MrBon StudioX — Creating Beyond Imagination.</p>
+  </div>
+</section>
+
+<section class="game" id="game">
+  <div class="row reveal">
+    <img class="bear" src="bear.png" alt="MrBon the bear">
+    <div class="game-info">
+      <div class="eyebrow">Our game</div>
+      <h2>Survive from MrBon</h2>
+      <p>A 2D survival horror game. Lock the door, hold on, and survive the bear.</p>
+      <a class="btn btn-red dl" href="#">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+        Download
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="iron" id="ironturbomax">
+  <div class="row reveal">
+    <img class="iron-img" src="ironturbomax.png" alt="IronTurboMax logo">
+    <div class="iron-info">
+      <h2>IronTurboMax</h2>
+      <p class="tag">Security. Protection. Support.</p>
+      <p>IronTurboMax is a security and support initiative focused on helping protect against exploits, hackers, and other potential threats.</p>
+      <p>If you encounter a problem, need technical assistance, or experience a security issue, you can contact our support team through our <a href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener">official Discord server</a>.</p>
+      <p class="closing">IronTurboMax — Fixing Problems</p>
+    </div>
+  </div>
+</section>
+
+<footer class="credit">
+  <a class="social" href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener" aria-label="Join our Discord server"><img src="discord.png" alt="Discord"></a>
+  <a class="social" href="https://www.tiktok.com/@mrbon.official" target="_blank" rel="noopener" aria-label="Watch our TikTok profile"><img src="tiktok.png" alt="TikTok"></a>
+  <span>asadullahexe</span>
+</footer>
+
+<script>
+// PUT YOUR GAME DOWNLOAD LINK HERE
+var DOWNLOAD_URL = "https://mrbonstudiox.github.io/Survive-from-MrBon/";
+document.querySelectorAll(".dl").forEach(function(a){ a.href = DOWNLOAD_URL; });
+
+// Typing animation
+(function(){
+  var el = document.getElementById("typed");
+  var text = "MrBon StudioX";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce){ el.textContent = text; return; }
+  var i = 0;
+  setTimeout(function tick(){
+    i++; el.textContent = text.slice(0, i);
+    if (i < text.length) setTimeout(tick, 140);
+  }, 700);
+})();
+
+// Nav + progress bar
+(function(){
+  var nav = document.getElementById("nav"), bar = document.getElementById("progress");
+  function update(){
+    var y = window.scrollY || 0;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    nav.classList.toggle("show", y > window.innerHeight * 0.6);
+    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+
+// Reveal on scroll
+(function(){
+  var items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)){ items.forEach(function(e){ e.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.25 });
+  items.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
