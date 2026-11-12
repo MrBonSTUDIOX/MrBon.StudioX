@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MrBon StudioX — Creating Beyond Imagination</title>
+<meta name="description" content="MrBon StudioX — independent game studio. Home of Survive from MrBon. Download the game and join the community.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MrBon StudioX — Creating Beyond Imagination">
+<meta property="og:description" content="Independent game studio. Home of Survive from MrBon.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="studio.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Pixelify+Sans:wght@500;700&family=Rubik:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--red:#e11d2e;--blue:#0a6fd0;--brown:#654329;--soft:#f5f3ee;--line:3px solid #111}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Rubik',sans-serif;font-weight:800;line-height:1.05;margin:0}
+h2{font-size:clamp(34px,6vw,64px);letter-spacing:-.5px}
+h3{font-size:24px}
+p{margin:0 0 16px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+img{max-width:100%}
+.px,.tag,.strip{font-family:'Pixelify Sans',monospace}
+section{padding:112px 24px}
+.wrap{max-width:1040px;margin:0 auto}
+.lead{font-size:clamp(18px,3vw,24px);color:#444;margin:14px 0 36px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:#fff;z-index:60}
+
+/* signature: bear-ear tag */
+.tag{position:relative;isolation:isolate;display:inline-block;margin:0 0 22px;padding:5px 18px;border:var(--line);border-radius:999px;background:#fff;font-size:15px;letter-spacing:2px;text-transform:uppercase}
+
+/* sticker cards */
+.card{border:var(--line);border-radius:22px;background:#fff;box-shadow:7px 7px 0 var(--ink);padding:28px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--ink)}
+.card.ink{background:var(--ink);color:#fff;box-shadow:7px 7px 0 var(--blue)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border:var(--line);border-radius:999px;font-family:'Rubik',sans-serif;font-weight:800;font-size:18px;letter-spacing:.5px;text-decoration:none;background:#fff;color:var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.red{background:var(--red);color:#fff}
+.btn svg{flex:none}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding-top:96px;padding-bottom:64px;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#d9d9d9 1.2px,transparent 1.2px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at center,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at center,#000 10%,transparent 70%);pointer-events:none}
+.hero>*{position:relative}
+.logo-big{width:min(56vw,330px);height:auto;animation:pop 1s ease both}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.typed{font-size:clamp(40px,10vw,104px);letter-spacing:-1px;min-height:1.1em}
+.caret{display:inline-block;width:.07em;height:.85em;margin-left:.06em;background:var(--ink);vertical-align:-.06em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{font-size:clamp(16px,3vw,22px);letter-spacing:4px;text-transform:uppercase;color:#555;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:10px}
+
+/* marquee strip */
+.strip{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;font-size:20px;letter-spacing:4px;text-transform:uppercase}
+.track{display:inline-flex;animation:slide 24s linear infinite}
+.track span{display:inline-flex;align-items:center}
+.track span::after{content:"";width:10px;height:10px;background:#fff;margin:0 34px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* about */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:start}
+.cols p{font-size:18px;color:#333}
+.stack{display:flex;flex-direction:column;gap:28px}
+.plist{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.plist li{display:flex;align-items:center;gap:12px;font-weight:600}
+.plist li::before{content:"";width:12px;height:12px;background:var(--blue);flex:none}
+.card.ink p{color:#ddd;margin:12px 0 0}
+.card.ink .sig{font-family:'Pixelify Sans',monospace;color:#fff;font-size:17px}
+
+/* projects */
+.soft{background:var(--soft);border-block:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;margin-top:20px}
+.proj{display:flex;flex-direction:column;gap:14px}
+.proj .art{height:230px;display:flex;align-items:center;justify-content:center;border:var(--line);border-radius:14px;background:#fff;background-image:radial-gradient(#e3e3e3 1.2px,transparent 1.2px);background-size:18px 18px}
+.bear{height:190px;width:auto;image-rendering:pixelated;animation:float 3.4s ease-in-out infinite;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+@keyframes float{50%{transform:translateY(-10px)}}
+.badge{align-self:flex-start;font-family:'Pixelify Sans',monospace;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border:2px solid var(--ink);border-radius:6px}
+.badge.live{background:var(--blue);border-color:var(--blue);color:#fff}
+.proj p{color:#444;margin:0}
+.proj .btn{align-self:flex-start;margin-top:6px}
+.bs{max-width:94%;max-height:210px;width:auto;height:auto;mix-blend-mode:multiply}
+
+/* IronTurboMax */
+.dark{background:var(--ink);color:#fff}
+.dark .tag{background:var(--ink);border-color:#fff}
+.iron{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:56px}
+.shield{flex:none;padding:30px 40px;background:#fff;border:var(--line);border-radius:22px;box-shadow:8px 8px 0 var(--blue)}
+.shield img{display:block;height:260px;width:auto;animation:float 4.2s ease-in-out infinite}
+.iron-info{flex:1 1 340px;max-width:540px}
+.dark .lead{color:#cfcfcf}
+.dark p{color:#ddd}
+.dark a.ul{color:#fff;font-weight:600}
+.fix{font-family:'Pixelify Sans',monospace;font-size:20px;letter-spacing:1px;color:#fff !important;margin-top:8px}
+
+/* downloads + support */
+.dl-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.dl-card p{margin:4px 0 0;color:#555}
+.note{margin-top:28px;color:#555}
+.note a{font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px}
+.two .card{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.two .card img{height:46px;width:auto}
+.two .card p{color:#444;margin:0 0 6px}
+
+/* footer */
+footer{background:#000;color:#fff;padding:44px 24px}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.foot strong{font-family:'Rubik',sans-serif;font-size:20px}
+.foot small{display:block;color:#aaa;font-size:14px}
+.soc{display:flex;align-items:center;gap:18px}
+.social{display:block;line-height:0;transition:transform .15s}
+.social:hover{transform:scale(1.12)}
+.social img{height:38px;width:auto;display:block;background:#fff;border-radius:8px;padding:3px}
+.by{color:#aaa;letter-spacing:1px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:640px){section{padding:84px 20px}.iron{gap:32px}.shield img{height:200px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.caret,.track,.bear,.shield img,.logo-big{animation:none}.card,.btn{transition:none}}
+
+/* Top bar + menu */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px 0 14px;background:#000;color:#fff}
+.brand{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(18px,5vw,24px);letter-spacing:.3px;white-space:nowrap}
+.brand img{height:40px;width:auto;display:block;flex:none}
+.burger{width:48px;height:48px;border:0;background:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent}
+.burger span{display:block;width:28px;height:3px;border-radius:3px;background:#fff;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.menu{position:absolute;top:100%;right:0;width:min(360px,100%);background:#000;border-top:1px solid #222;border-radius:0 0 16px 16px;padding:6px 16px 14px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+.menu.open{opacity:1;visibility:visible;transform:none}
+.menu a{display:flex;flex-direction:column;gap:3px;padding:16px 8px;color:#fff;text-decoration:none;border-bottom:1px solid #222;border-radius:8px;transition:background .15s}
+.menu a:last-child{border-bottom:0}
+.menu a:hover{background:#151515}
+.menu a strong{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;letter-spacing:1px;text-transform:uppercase}
+.menu a span{font-size:14px;color:#a8a8a8}
+.hero{padding-top:88px}
+.menu .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:8px 0 10px;border-bottom:1px solid #222}
+.menu .mgrid a{flex-direction:row;padding:10px 8px;border:0;font-family:'Pixelify Sans',monospace;font-size:15px;letter-spacing:1px;text-transform:uppercase;color:#d6d6d6}
+.hero{padding-top:96px}
+
+/* Jumpscare */
+.bear{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.scare{position:fixed;inset:0;z-index:1000;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}
+.scare.on{display:flex}
+.scare img{height:92vh;max-width:98vw;object-fit:contain;animation:shake .08s linear infinite}
+@keyframes shake{0%{transform:translate(0,0) scale(1.03)}25%{transform:translate(-7px,5px) scale(1.05)}50%{transform:translate(6px,-6px) scale(1.03)}75%{transform:translate(-5px,-4px) scale(1.05)}100%{transform:translate(5px,6px) scale(1.03)}}
+.redout{position:fixed;inset:0;z-index:1001;background:#f00;display:none}
+.redout.on{display:block}
+
+/* Top bar + menu */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px 0 14px;background:#000;color:#fff}
+.brand{display:flex;align-items:center;gap:14px;min-width:0;text-decoration:none;color:#fff;font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(18px,5vw,24px);letter-spacing:.3px;white-space:nowrap}
+.brand img{height:40px;width:auto;display:block;flex:none}
+.burger{width:48px;height:48px;border:0;background:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent}
+.burger span{display:block;width:28px;height:3px;border-radius:3px;background:#fff;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+.menu{position:absolute;top:100%;right:0;width:min(360px,100%);background:#000;border-top:1px solid #222;border-radius:0 0 16px 16px;padding:6px 16px 14px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+.menu.open{opacity:1;visibility:visible;transform:none}
+.menu a{display:flex;flex-direction:column;gap:3px;padding:16px 8px;color:#fff;text-decoration:none;border-bottom:1px solid #222;border-radius:8px;transition:background .15s}
+.menu a:last-child{border-bottom:0}
+.menu a:hover{background:#151515}
+.menu a strong{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;letter-spacing:1px;text-transform:uppercase}
+.menu a span{font-size:14px;color:#a8a8a8}
+.hero{padding-top:88px}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="topbar" id="nav">
+  <a class="brand" href="#top"><img src="logo-white.png" width="44" height="40" alt=""><span>MrBon StudioX</span></a>
+  <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  <nav class="menu" id="menu">
+    <div class="mgrid"><a href="#top">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#ironturbomax">IronTurboMax</a><a href="#downloads">Downloads</a><a href="#support">Support</a></div>
+    <a class="dl" href="#"><strong>Download</strong><span>Get the game</span></a>
+    <a href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener"><strong>Help</strong><span>Need help? Join our Discord</span></a>
+    <a href="https://mrbonstudiox.github.io/MrBonTikTok/" target="_blank" rel="noopener"><strong>Join Profile</strong><span>Our TikTok</span></a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <img class="logo-big" src="studio.png" width="330" height="330" alt="MrBon StudioX logo">
+  <h1 class="typed" aria-label="MrBon StudioX"><span id="typed"></span><span class="caret"></span></h1>
+  <p class="sub px">Creating Beyond Imagination</p>
+  <div class="cta">
+    <a class="btn red dl" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg> Download</a>
+    <a class="btn" href="#about">About the studio</a>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="track"><span>Innovation</span><span>Creativity</span><span>Gaming</span><span>Innovation</span><span>Creativity</span><span>Gaming</span><span>Innovation</span><span>Creativity</span><span>Gaming</span><span>Innovation</span><span>Creativity</span><span>Gaming</span><span>Innovation</span><span>Creativity</span><span>Gaming</span><span>Innovation</span><span>Creativity</span><span>Gaming</span></div></div>
+
+<section id="about">
+  <div class="wrap reveal">
+    <span class="tag">About</span>
+    <h2>MrBon Studio X</h2>
+    <p class="lead">Innovation. Creativity. Gaming.</p>
+    <div class="cols">
+      <div>
+        <p>MrBon StudioX is an independent game development studio focused on creating original gaming experiences, unique worlds, and memorable characters.</p>
+        <p>Our mission is to bring creative ideas to life through game development, interactive experiences, and original projects. We aim to combine creativity, technology, and innovation to build experiences that players can enjoy and remember.</p>
+        <p>From original characters and ambitious concepts to interactive games and experimental projects, every creation represents our vision and dedication.</p>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <h3>Our Projects</h3>
+          <ul class="plist"><li>Game Development</li><li>Original Characters &amp; Universes</li><li>Interactive Experiences</li><li>Creative Experiments</li></ul>
+        </div>
+        <div class="card ink">
+          <h3>Our Vision</h3>
+          <p>We believe every great project begins with an idea. At MrBon StudioX, we turn ideas into experiences.</p>
+          <p class="sig">MrBon StudioX — Creating Beyond Imagination.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="projects">
+  <div class="wrap">
+    <div class="reveal"><span class="tag">Projects</span><h2>What we make</h2></div>
+    <div class="grid reveal">
+      <article class="card proj">
+        <div class="art"><img class="bear" id="bear" src="bear.png" width="106" height="190" alt="MrBon the bear" draggable="false"></div>
+        <span class="badge live">Playable</span>
+        <h3>Survive from MrBon</h3>
+        <p>A 2D survival horror game. Lock the door, hold on, and survive the bear.</p>
+        <a class="btn red dl" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg> Download</a>
+      </article>
+      <article class="card proj">
+        <div class="art"><img class="bs" src="bonsquad.jpg" width="900" height="335" alt="BonSquad logo" loading="lazy" decoding="async"></div>
+        <span class="badge">More soon</span>
+        <h3>BonSquad</h3>
+        <p>A MrBon StudioX project. More details coming soon.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="ironturbomax">
+  <div class="wrap iron reveal">
+    <div class="shield"><img src="ironturbomax.png" width="190" height="260" alt="IronTurboMax logo"></div>
+    <div class="iron-info">
+      <span class="tag">Security</span>
+      <h2>IronTurboMax</h2>
+      <p class="lead">Security. Protection. Support.</p>
+      <p>IronTurboMax is a security and support initiative focused on helping protect against exploits, hackers, and other potential threats.</p>
+      <p>If you encounter a problem, need technical assistance, or experience a security issue, you can contact our support team through our <a class="ul" href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener">official Discord server</a>.</p>
+      <p class="fix">IronTurboMax — Fixing Problems</p>
+    </div>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="wrap">
+    <div class="reveal"><span class="tag">Downloads</span><h2>Get the game</h2></div>
+    <div class="card dl-card reveal" style="margin-top:32px">
+      <div><h3>Survive from MrBon</h3><p>2D survival horror · PC</p></div>
+      <a class="btn red dl" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg> Download</a>
+    </div>
+    <p class="note reveal">Problems with the download or the game? <a href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener">Ask for help on Discord</a>.</p>
+  </div>
+</section>
+
+<section class="soft" id="support">
+  <div class="wrap">
+    <div class="reveal"><span class="tag">Contact / Support</span><h2>Need help?</h2><p class="lead">Technical problem, question or security issue — reach the team here.</p></div>
+    <div class="two reveal">
+      <div class="card">
+        <img src="discord.png" width="60" height="46" alt="Discord">
+        <h3>Help</h3>
+        <p>Join our official Discord server to contact the support team.</p>
+        <a class="btn" href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener">Join Discord</a>
+      </div>
+      <div class="card">
+        <img src="tiktok.png" width="46" height="46" alt="TikTok">
+        <h3>Join Profile</h3>
+        <p>Follow MrBon StudioX on TikTok.</p>
+        <a class="btn" href="https://mrbonstudiox.github.io/MrBonTikTok/" target="_blank" rel="noopener">Open profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>MrBon StudioX</strong><small>Creating Beyond Imagination.</small></div>
+    <div class="soc">
+      <a class="social" href="https://discord.gg/MED4eb9MPr" target="_blank" rel="noopener" aria-label="Discord"><img src="discord.png" width="50" height="38" alt=""></a>
+      <a class="social" href="https://mrbonstudiox.github.io/MrBonTikTok/" target="_blank" rel="noopener" aria-label="TikTok"><img src="tiktok.png" width="38" height="38" alt=""></a>
+    </div>
+    <span class="by px">asadullahexe</span>
+  </div>
+</footer>
+
+<div class="scare" id="scare" aria-hidden="true"><img src="scare.png" alt="" draggable="false" loading="lazy" decoding="async"></div>
+<div class="redout" id="redout" aria-hidden="true"></div>
+<audio id="scream" src="scream.mp3" preload="metadata"></audio>
+
+<script>
+// PUT YOUR GAME DOWNLOAD LINK HERE
+var DOWNLOAD_URL = "https://mrbonstudiox.github.io/Survive-from-MrBon/";
+document.querySelectorAll(".dl").forEach(function(a){ a.href = DOWNLOAD_URL; });
+
+// Typing animation
+(function(){
+  var el = document.getElementById("typed");
+  var text = "MrBon StudioX";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce){ el.textContent = text; return; }
+  var i = 0;
+  setTimeout(function tick(){
+    i++; el.textContent = text.slice(0, i);
+    if (i < text.length) setTimeout(tick, 140);
+  }, 700);
+})();
+
+// Progress bar
+(function(){
+  var bar = document.getElementById("progress");
+  function update(){
+    var y = window.scrollY || 0;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+
+// Burger menu
+(function(){
+  var burger = document.getElementById("burger"), menu = document.getElementById("menu");
+  function set(open){
+    menu.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  burger.addEventListener("click", function(e){ e.stopPropagation(); set(!menu.classList.contains("open")); });
+  menu.addEventListener("click", function(e){ if (e.target.closest("a")) set(false); });
+  document.addEventListener("click", function(e){ if (!menu.contains(e.target)) set(false); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") set(false); });
+})();
+
+// Reveal on scroll
+(function(){
+  var items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)){ items.forEach(function(e){ e.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.25 });
+  items.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
